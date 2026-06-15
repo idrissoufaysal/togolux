@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 18 100% 98%;      /* #fff8f5 */
+    --foreground: 26 26% 11%;       /* #221a14 */
+
+    --card: 18 100% 98%;            /* #fff8f5 */
+    --card-foreground: 26 26% 11%;  /* #221a14 */
+
+    --popover: 18 100% 98%;         /* #fff8f5 */
+    --popover-foreground: 26 26% 11%;
+
+    --primary: 27 31% 14%;          /* #322214 */
+    --primary-foreground: 18 100% 98%;
+
+    --secondary: 34 96% 81%;        /* #fdd7a3 */
+    --secondary-foreground: 27 31% 14%;
+
+    --muted: 24 35% 85%;            /* #e7d7cd */
+    --muted-foreground: 26 9% 47%;  /* #80756d */
+
+    --accent: 35 44% 61%;           /* #c5a373 */
+    --accent-foreground: 27 31% 14%;
+
+    --destructive: 351 65% 37%;     /* #9B2335 */
+    --destructive-foreground: 18 100% 98%;
+
+    --border: 24 35% 83%;           /* #dec1ac */
+    --input: 24 35% 83%;            /* #dec1ac */
+    --ring: 35 44% 61%;             /* #c5a373 */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 26 26% 10%;       /* #1c1713 */
+    --foreground: 18 100% 98%;      /* #fbf7f5 */
+
+    --card: 26 26% 10%;
+    --card-foreground: 18 100% 98%;
+
+    --popover: 26 26% 10%;
+    --popover-foreground: 18 100% 98%;
+
+    --primary: 18 100% 98%;
+    --primary-foreground: 27 31% 14%;
+
+    --secondary: 27 31% 20%;
+    --secondary-foreground: 18 100% 98%;
+
+    --muted: 27 31% 20%;
+    --muted-foreground: 26 9% 65%;
+
+    --accent: 35 44% 61%;
+    --accent-foreground: 27 31% 14%;
+
+    --destructive: 351 65% 37%;
+    --destructive-foreground: 18 100% 98%;
+
+    --border: 27 31% 25%;
+    --input: 27 31% 25%;
+    --ring: 35 44% 61%;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
