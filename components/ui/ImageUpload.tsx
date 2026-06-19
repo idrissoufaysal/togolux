@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Upload, X, Loader2, FileImage } from 'lucide-react';
 import { cn } from './utils';
 
-// We import the public insforge client
-import { insforge } from '@/lib/insforge';
+// We import the authenticated insforge browser client
+import { insforgeBrowser } from '@/lib/insforge-client';
 import { PropertyImage } from '@/types';
 
 interface ImageUploadProps {
@@ -45,7 +45,7 @@ export function ImageUpload({
         const file = files[i]!;
 
         // Upload to InsForge Storage using uploadAuto
-        const { data, error } = await insforge.storage
+        const { data, error } = await insforgeBrowser.storage
           .from(bucketName)
           .uploadAuto(file);
 
@@ -74,7 +74,7 @@ export function ImageUpload({
   const handleRemoveImage = async (imageToRemove: PropertyImage) => {
     try {
       // Delete from storage using remove()
-      const { error } = await insforge.storage
+      const { error } = await insforgeBrowser.storage
         .from(bucketName)
         .remove(imageToRemove.id); // The id is the storage key
 

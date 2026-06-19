@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';
-import { insforge } from '@/lib/insforge';
+import { insforgeBrowser } from '@/lib/insforge-client';
 import { PropertyImage, Agent, Property } from '@/types';
 import {
   Upload,
@@ -153,7 +153,7 @@ export function PropertyForm({ agents, property }: PropertyFormProps) {
           throw new Error(`L'extension du fichier "${file.name}" est invalide.`);
         }
 
-        const { data, error } = await insforge.storage
+        const { data, error } = await insforgeBrowser.storage
           .from('property-images')
           .uploadAuto(file);
 
@@ -181,7 +181,7 @@ export function PropertyForm({ agents, property }: PropertyFormProps) {
   // Remove uploaded image
   const handleRemoveImage = async (imageToRemove: PropertyImage) => {
     try {
-      await insforge.storage.from('property-images').remove(imageToRemove.id);
+      await insforgeBrowser.storage.from('property-images').remove(imageToRemove.id);
       const currentImages = form.getValues('images');
       form.setValue(
         'images',
