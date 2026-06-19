@@ -13,8 +13,7 @@ export function Header() {
   const navItems = [
     { name: 'Accueil', href: '/' },
     { name: 'Nos Biens', href: '/biens' },
-    { name: 'Nos Agents', href: '/#agents' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -68,7 +67,7 @@ export function Header() {
           {/* Desktop Action CTA */}
           <div className="hidden md:flex items-center">
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-[#755a30] hover:bg-[#5f4826] text-white font-sans font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-sm transition-all duration-300 shadow-sm active:scale-[0.98]"
             >
               NOUS CONTACTER
@@ -108,7 +107,7 @@ export function Header() {
           </div>
           <div className="pt-2 border-t border-stone-100 dark:border-stone-800">
             <Link
-              href="/#contact"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="block w-full bg-[#755a30] hover:bg-[#5f4826] text-white font-sans font-bold text-center py-3.5 rounded-sm text-xs tracking-wider uppercase"
             >
